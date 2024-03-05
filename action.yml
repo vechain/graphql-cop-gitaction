@@ -11,10 +11,14 @@ runs:
   steps:
     - uses: actions/checkout@v4
     - uses: actions/setup-python@v5
-    - run: python graphql-cop.py -t $GRAPHQL_APP
+    - name: Run graphql-cop 
+      shell: bash
+      run: python graphql-cop.py -t $GRAPHQL_APP
       env:
         GRAPHQL_APP: ${{ inputs.graphql-app }}
-    - run: python graphql-cop.py -t $GRAPHQL_APP -o json > scan.json
+    - name: Run graphql-cop JSON File
+      shell: bash
+      run: python graphql-cop.py -t $GRAPHQL_APP -o json > scan.json
       env:
         GRAPHQL_APP: ${{ inputs.graphql-app }}
     
