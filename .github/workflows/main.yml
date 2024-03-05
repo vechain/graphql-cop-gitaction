@@ -1,0 +1,13 @@
+on: [push]
+
+jobs:
+  scan-graphql:
+    runs-on: ubuntu-latest
+    name: Scan graphql endpoint
+    steps:
+      - uses: actions/checkout@v4
+      - id: foo
+        uses: actions/graphql-cop-gitaction@v1
+        with:
+          graphql-app: 'https://api.dev.marketplace.vechain.org/graphql'
+      
