@@ -13,7 +13,7 @@ runs:
     - uses: actions/setup-python@v5
       with:
         python-version: '3.10' 
-    - run: python3 graphql-cop.py -t $GRAPHQL_APP
+    - run: python graphql-cop.py -t $GRAPHQL_APP
       env:
         $GRAPHQL_APP: ${{ inputs.graphql-app }}
     - run: python3 graphql-cop.py -t $GRAPHQL_APP -o json > scan.json
