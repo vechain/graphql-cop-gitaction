@@ -16,7 +16,9 @@ runs:
       with:
         python-version: '3.9'
         cache: 'pip' # caching pip dependencies
-    - run: pip install -r requirements.txt
+    - name: Install dependencies
+      shell: bash
+      run: pip install -r requirements.txt
     - name: Run graphql-cop 
       shell: bash
       run: python graphql-cop.py -t $GRAPHQL_APP
