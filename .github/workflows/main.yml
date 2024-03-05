@@ -8,7 +8,7 @@ jobs:
       - uses: actions/checkout@v4
       - id: foo
         name: Run graphql-cop 
-        uses: vechain/graphql-cop-gitaction@v3.3
+        uses: vechain/graphql-cop-gitaction@v3.4
         with:
           graphql-app: 'https://api.dev.marketplace.vechain.org/graphql'
       
