@@ -7,8 +7,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - id: foo
-        #uses: actions/graphql-cop-gitaction@v1
-        uses: vechain/graphql-cop-gitaction@v1
+        #uses: actions/graphql-cop-gitaction@v2
+        uses: vechain/graphql-cop-gitaction@v2
         with:
           graphql-app: 'https://api.dev.marketplace.vechain.org/graphql'
       
