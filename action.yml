@@ -1,0 +1,22 @@
+name: 'graphql-cop'
+description: 'run graphql-cop as a gitaction'
+inputs:
+  graphql-app:  # a URL with 'graphql' at the end
+    description: 'a URL with graphql at the end'
+    required: true
+    default: 'https://.com'
+
+runs:
+  using: "composite"
+  steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-python@v5
+      with:
+      python-version: '3.10' 
+    - run: python3 graphql-cop.py -t $GRAPHQL_APP
+      env:
+        $GRAPHQL_APP: ${{ inputs.graphql-app }}
+    - run: python3 graphql-cop.py -t $GRAPHQL_APP -o json > scan.json
+      env:
+        $GRAPHQL_APP: ${{ inputs.graphql-app }}
+    
