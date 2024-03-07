@@ -33,9 +33,6 @@ runs:
         name: scan-results
         path: scan.json
     
-# Ref: https://haya14busa.github.io/github-action-brandings/
-branding:
-  icon: 'check'
-  color: 'blue'
+
 
   
