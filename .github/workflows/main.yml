@@ -6,7 +6,7 @@ jobs:
     name: Scan graphql endpoint
     steps:
       - uses: actions/checkout@v4
-      - id: foo
+      - id: fo
         name: Run graphql-cop 
         uses: vechain/graphql-cop-gitaction@v3.6
         with:
