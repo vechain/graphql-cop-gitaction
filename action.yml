@@ -17,7 +17,7 @@ runs:
     - uses: actions/setup-python@v5
       with:
         python-version: '3.9'
-        cache: 'pip' # caching pip dependencies
+        #cache: 'pip' # caching pip dependencies
         #cache-dependency-path: requirements.txt
     - name: Install dependencies
       shell: bash
