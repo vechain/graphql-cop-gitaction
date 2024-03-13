@@ -11,6 +11,10 @@ runs:
   using: "composite"
   steps:
     - uses: actions/checkout@v4
+      with:
+        repository: 'vechainfoundation/graphql-cop-gitaction'
+        ref: 'main'
+        path: 'graphql-cop-gitaction'
     - name: get path
       shell: bash
       run: pwd
