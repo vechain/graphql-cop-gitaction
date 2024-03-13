@@ -25,7 +25,7 @@ runs:
         #cache-dependency-path: requirements.txt
     - name: Install dependencies
       shell: bash
-      run: pip install -r graphql-cop-gitaction/graphql-cop-gitaction/requirements.txt
+      run: pip install -r graphql-cop-gitaction/requirements.txt
     - name: Run graphql-cop 
       shell: bash
       run: python graphql-cop.py -t $GRAPHQL_APP
