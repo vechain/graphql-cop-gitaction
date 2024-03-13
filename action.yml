@@ -15,9 +15,9 @@ runs:
         repository: 'vechainfoundation/graphql-cop-gitaction'
         ref: 'main'
         path: 'graphql-cop-gitaction'
-    - name: get path
+    - name: get lit of files
       shell: bash
-      run: pwd
+      run: ls
     - uses: actions/setup-python@v5
       with:
         python-version: '3.9'
