@@ -11,21 +11,29 @@ runs:
   using: "composite"
   steps:
     - uses: actions/checkout@v4
+      with:
+        repository: 'vechain/graphql-cop-gitaction'
+        ref: 'main'
+        path: 'graphql-cop-gitaction'
+    - name: get lit of files
+      shell: bash
+      run: ls graphql-cop-gitaction
     - uses: actions/setup-python@v5
       with:
         python-version: '3.9'
-        cache: 'pip' # caching pip dependencies
+        #cache: 'pip' # caching pip dependencies
+        #cache-dependency-path: requirements.txt
     - name: Install dependencies
       shell: bash
-      run: pip install -r requirements.txt
+      run: pip install -r graphql-cop-gitaction/requirements.txt
     - name: Run graphql-cop 
       shell: bash
-      run: python graphql-cop.py -t $GRAPHQL_APP
+      run: python graphql-cop-gitaction/graphql-cop.py -t $GRAPHQL_APP
       env:
         GRAPHQL_APP: ${{ inputs.graphql-app }}
     - name: Run graphql-cop JSON File
       shell: bash
-      run: python graphql-cop.py -t $GRAPHQL_APP -o json > scan.json
+      run: python graphql-cop-gitaction/graphql-cop.py -t $GRAPHQL_APP -o json > scan.json
       env:
         GRAPHQL_APP: ${{ inputs.graphql-app }}
     - uses: actions/upload-artifact@v4
@@ -33,9 +41,6 @@ runs:
         name: scan-results
         path: scan.json
     
-# Ref: https://haya14busa.github.io/github-action-brandings/
-branding:
-  icon: 'check'
-  color: 'blue'
+
 
   
