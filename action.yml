@@ -12,7 +12,7 @@ runs:
   steps:
     - uses: actions/checkout@v4
       with:
-        repository: 'vechainfoundation/graphql-cop-gitaction'
+        repository: 'vechain/graphql-cop-gitaction'
         ref: 'main'
         path: 'graphql-cop-gitaction'
     - name: get lit of files
